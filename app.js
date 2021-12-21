@@ -4,7 +4,7 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 
-const connectDB = require("./database");
+const connectDB = require("./db/DataBase");
 const passport = require("passport");
 const { localStrategy, JWTStrategy } = require("./middleware/passport");
 
