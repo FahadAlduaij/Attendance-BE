@@ -4,6 +4,15 @@ const User = require("../../models/User");
 const { createHash } = require("../../utils/createHash");
 const { generateToken } = require("../../utils/createToken");
 
+exports.fetchProfiles = async (req, res, next) => {
+	try {
+		const profiles = await User.find().select("-password").populate();
+		return res.status(200).json(profiles);
+	} catch (error) {
+		next(error);
+	}
+};
+
 exports.register = async (req, res, next) => {
 	try {
 		req.body.password = await createHash(req.body.password);

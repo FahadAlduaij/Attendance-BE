@@ -5,8 +5,9 @@ const passport = require("passport");
 const router = express.Router();
 
 // controllers
-const { register, login } = require("./controllers");
+const { fetchProfiles, register, login } = require("./controllers");
 
+router.get("/profiles", fetchProfiles);
 router.post("/register", register);
 router.post(
 	"/login",
