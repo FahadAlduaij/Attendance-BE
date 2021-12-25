@@ -27,5 +27,5 @@ const UserSchema = Schema(
 	{ timestamps: true }
 );
 
-UserSchema.plugin(mongooseSlugPlugin, { tmpl: "<%=title%>" });
+// UserSchema.plugin(mongooseSlugPlugin, { tmpl: "<%=title%>" });
 module.exports = model("User", UserSchema);

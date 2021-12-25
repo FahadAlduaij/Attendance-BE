@@ -27,5 +27,5 @@ passport.use(JWTStrategy);
 // Routes
 app.use("/api/users", userRoutes);
 
-const PORT = process.env.port || 8080;
+const PORT = process.env.Port || 8080;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
