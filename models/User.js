@@ -3,7 +3,7 @@ const mongooseSlugPlugin = require("mongoose-slug-plugin");
 
 const UserSchema = Schema(
 	{
-		username: {
+		email: {
 			type: String,
 			unique: true,
 			required: true,
@@ -12,16 +12,13 @@ const UserSchema = Schema(
 			type: String,
 			required: true,
 		},
-		profile: {
-			name: {
-				type: String,
-				default: "New User",
-				required: true,
-			},
-			image: {
-				type: String,
-				default: "/media/defaultUserImage.jpg",
-			},
+		name: {
+			type: String,
+			required: true,
+		},
+		image: {
+			type: String,
+			default: "/media/defaultUserImage.jpg",
 		},
 	},
 	{ timestamps: true }

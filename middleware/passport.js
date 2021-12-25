@@ -8,7 +8,7 @@ const User = require("../models/User");
 
 exports.localStrategy = new LocalStrategy(async (username, password, done) => {
 	try {
-		const user = await User.findOne({ username });
+		const user = await User.findOne({ email: username });
 		const passwordMath = user
 			? await bcrypt.compare(password, user.password)
 			: false;
