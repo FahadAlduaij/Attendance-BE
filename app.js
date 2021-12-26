@@ -10,6 +10,7 @@ const { localStrategy, JWTStrategy } = require("./middleware/passport");
 
 // Imports Route
 const userRoutes = require("./apis/users/routes");
+const AbsentRoutes = require("./apis/Absent/routes");
 
 //------------------------------------------------------------------
 
@@ -26,6 +27,7 @@ passport.use(JWTStrategy);
 
 // Routes
 app.use("/api/users", userRoutes);
+app.use("/api/absents", AbsentRoutes);
 
 const PORT = process.env.Port || 8080;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

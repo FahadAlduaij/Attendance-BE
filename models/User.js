@@ -3,7 +3,7 @@ const mongooseSlugPlugin = require("mongoose-slug-plugin");
 
 const UserSchema = Schema(
 	{
-		email: {
+		username: {
 			type: String,
 			unique: true,
 			required: true,
