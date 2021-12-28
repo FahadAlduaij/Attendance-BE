@@ -10,6 +10,7 @@ const {
 	createAbsent,
 	fetchAbsents,
 	updateAbsent,
+	deleteAbsent,
 } = require("./controllers");
 
 router.param("absentId", async (req, res, next, absentId) => {
@@ -36,6 +37,11 @@ router.put(
 	"/:absentId",
 	passport.authenticate("jwt", { session: false }),
 	updateAbsent
+);
+router.delete(
+	"/:absentId",
+	passport.authenticate("jwt", { session: false }),
+	deleteAbsent
 );
 
 module.exports = router;
