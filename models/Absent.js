@@ -2,13 +2,18 @@ const { Schema, model } = require("mongoose");
 
 const AbsentSchema = Schema(
 	{
-		id: {
-			type: String,
-		},
 		user: {
 			type: Schema.Types.ObjectId,
 			ref: "User",
 		},
+		id: {
+			type: String,
+			unique: true,
+		},
+		name: {
+			type: String,
+		},
+
 		day: {
 			type: String,
 			enum: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
