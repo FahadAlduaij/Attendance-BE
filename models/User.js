@@ -1,7 +1,7 @@
-const { Schema, model } = require("mongoose");
+const mongoose = require("mongoose");
 const mongooseSlugPlugin = require("mongoose-slug-plugin");
 
-const UserSchema = Schema(
+const UserSchema = mongoose.Schema(
 	{
 		username: {
 			type: String,
@@ -24,5 +24,5 @@ const UserSchema = Schema(
 	{ timestamps: true }
 );
 
-// UserSchema.plugin(mongooseSlugPlugin, { tmpl: "<%=title%>" });
-module.exports = model("User", UserSchema);
+UserSchema.plugin(mongooseSlugPlugin, { tmpl: "<%=username%>" });
+module.exports = mongoose.model("User", UserSchema);

@@ -30,11 +30,9 @@ const AbsentSchema = Schema(
 		},
 		from: {
 			type: Date,
-			default: Date.now(),
 		},
 		to: {
 			type: Date,
-			default: Date.now(),
 		},
 	},
 	{ timestamps: true }
