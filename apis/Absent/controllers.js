@@ -49,7 +49,7 @@ exports.updateAbsent = async (req, res, next) => {
 
 exports.deleteAbsent = async (req, res, next) => {
 	try {
-		await Absent.deleteOne(req.absent._id);
+		await Absent.deleteOne(req.absent);
 		res.status(200).end();
 	} catch (error) {
 		next(error);
