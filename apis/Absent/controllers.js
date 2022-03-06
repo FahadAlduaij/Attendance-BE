@@ -25,7 +25,9 @@ exports.createAbsent = async (req, res, next) => {
 	try {
 		req.body.user = req.user._id;
 		const newAbsent = await Absent.create(req.body);
-		return res.status(201).json(newAbsent);
+		return res
+			.status(201)
+			.json({ newAbsent, message: "New attendance created" });
 	} catch (error) {
 		next(error);
 	}

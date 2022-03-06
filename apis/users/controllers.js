@@ -28,5 +28,5 @@ exports.register = async (req, res, next) => {
 
 exports.login = async (req, res, next) => {
 	const token = generateToken(req.user);
-	res.status(200).json({ token });
+	res.status(200).json({ token, message: "User Logged in" });
 };
